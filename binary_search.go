@@ -1,8 +1,6 @@
-package main
+package algorithms
 
-import "fmt"
-
-func binary_search(list []int, item int) (index int, ok bool) {
+func Binary_search(list []int, item int) (index int, ok bool) {
 	low := 0
 	high := len(list) - 1
 
@@ -24,12 +22,4 @@ func binary_search(list []int, item int) (index int, ok bool) {
 	}
 
 	return -1, false
-}
-
-func main() {
-	list := []int{1, 3, 5, 7, 9}
-	item := 4
-
-	answer := fmt.Sprint(binary_search(list, item))
-	fmt.Println(answer)
 }
