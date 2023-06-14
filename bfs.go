@@ -1,9 +1,12 @@
 package algorithms
 
 func BFS(graph map[string][]string, start string, check func(name string) bool) bool {
-	queue := graph[start]
 
-	searched := map[string]bool{start: true}
+	var queue []string
+	queue = append(queue, start)
+	queue = append(queue, graph[start]...)
+
+	searched := map[string]bool{}
 
 	for len(queue) > 0 {
 		person := queue[0]
